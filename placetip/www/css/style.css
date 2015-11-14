@@ -1,9 +1,23 @@
 .header {
-    color:red;
+    z-index:1;
+    position:absolute;
+    top:0; left:0; right:0;
+    height:10%;
+    padding-top:5%;
+    padding-bottom:5%;
+    opacity:0.5;
+    background-color:blue;
+}
+
+.map {
+    z-index:0;
+    position:absolute;
+    top:0;bottom:0; left:0; right:0;
+    background-color:white;
 }
 
 .add-tip-section {
-    background-color:green;
+    z-index:1;
     position:absolute;
     top:0;bottom:0; left:0; right:0;
 }
