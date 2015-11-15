@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
     <head>
          <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
@@ -10,20 +10,28 @@
     </head>
     <body>
         
-        <div class="header">
+        <div class="header"></div>
 
-        </div>
+        <div class="map"></div>
 
-        <div class="map">
+        <div class="add-tip-section" ng-controller="tipSectionCtrl">
 
-        </div>
-
-        <div class="add-tip-section">
-            
-            <div class="add-tip-button">
+            <div class="add-tip-type-buttons-row" ng-hide="typeButtonsHide">
+                <div class="add-tip-type-button"></div>
+                <div class="add-tip-type-button button-two"></div>
+                <div class="add-tip-type-button button-two"></div>
+                <div class="add-tip-type-button button-two"></div>
+                <div class="add-tip-type-button button-two"></div>
             </div>
 
+            <div class="add-tip-button" ng-click="toggle()"></div>
+
         </div>
 
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/controllers/tipSectionCtrl.js"></script>
+        <script src="js/app.js"></script>
+        
     </body>
 </html>

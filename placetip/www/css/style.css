@@ -32,3 +32,25 @@
     overflow:hidden;
     border-radius:50%;
 }
+
+.add-tip-type-buttons-row {
+    background-color:purple;
+    position:absolute;
+    top:40%; left:0; right:0;
+    height:20%;
+}
+
+.add-tip-type-button {
+    background-color:grey;
+    margin:0px 5%;
+    width:10%;
+    height:0;
+    float:left;
+    padding-bottom:10%;
+    overflow:hidden;
+    border-radius:50%;
+}
+
+.button-two {
+    margin-left: 20px;
+}
