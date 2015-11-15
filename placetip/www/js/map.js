@@ -1,29 +1,6 @@
-function CenterControl(controlDiv, map) {
-    var controlUI = document.createElement('div');
-    controlUI.style.backgroundColor = '#fff';
-    controlUI.style.border = '2px solid #fff';
-    controlUI.style.borderRadius = '3px';
-    controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-    controlUI.style.cursor = 'pointer';
-    controlUI.style.marginBottom = '22px';
-    controlUI.style.textAlign = 'center';
-    controlUI.title = 'Click to recenter the map';
-    controlDiv.appendChild(controlUI);
-    
-    var controlText = document.createElement('div');
-    controlText.style.color = 'rgb(25,25,25)';
-    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-    controlText.style.fontSize = '16px';
-    controlText.style.lineHeight = '38px';
-    controlText.style.paddingLeft = '5px';
-    controlText.style.paddingRight = '5px';
-    controlText.innerHTML = 'Center Map';
-    controlUI.appendChild(controlText);
-    
-}
-
+/*
 function initialize() {
-    var mapCanvas = document.getElementById('map-canvas');
+    var mapCanvas = document.getElementById('map-section');
     var myLatLng = {lat: 50.519506, lng: 1.5930193}; // POSITION HHD TOUQUET
     var mapOptions = {
         center: myLatLng,
@@ -43,5 +20,14 @@ function initialize() {
     centerControlDiv.index = 1;
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 }
+*/
 
-google.maps.event.addDomListener(window, 'load', initialize);
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map-section'), {
+                                  center: {lat: 50.519506, lng: 1.5930193},
+                                  scrollwheel: false,
+                                  zoom: 17
+                                  });
+}
+
+google.maps.event.addDomListener(window, 'load', initMap);

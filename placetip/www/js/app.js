@@ -1,2 +1,2 @@
 var app = angular.module('app', []);
-app.controller('tipSectionCtrl', tipSectionCtrl);
+app.controller('mainCtrl', mainCtrl);

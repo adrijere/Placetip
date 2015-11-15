@@ -1,4 +1,9 @@
+body {
+    transition-duration:0.5s;
+}
+
 .header {
+    transition-duration:inherit;
     z-index:1;
     position:absolute;
     top:0; left:0; right:0;
@@ -10,19 +15,36 @@
 }
 
 .map {
+    transition-duration:inherit;
     z-index:0;
     position:absolute;
     top:0;bottom:0; left:0; right:0;
     background-color:white;
 }
 
+.blur
+{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
 .tip-section {
+    transition-duration:inherit;
+    pointer-events:none;
     z-index:1;
     position:absolute;
     top:0;bottom:0; left:0; right:0;
 }
 
+.tip-section.active {
+    pointer-events:auto;
+}
+
 .tip-button {
+    pointer-events:auto;
     background-color:red;
     position:absolute;
     bottom:10%; left:40%;
@@ -34,16 +56,14 @@
 }
 
 .tip-type-buttons {
-    pointer-events:none;
+    transition-duration:inherit;
     position:absolute;
     top:70%; left:0; right:0;
     height:20%;
     opacity:0;
-    transition-duration:0.5s;
 }
 
 .tip-type-buttons.visible {
-    pointer-events:auto;
     opacity:1;
     top:50%;
 }

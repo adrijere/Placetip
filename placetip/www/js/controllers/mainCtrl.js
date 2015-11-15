@@ -1,4 +1,4 @@
-function tipSectionCtrl($scope) {
+function mainCtrl($scope) {
     $scope.typeButtonsVisible = false;
     
     $scope.showTypeButtons = function() {

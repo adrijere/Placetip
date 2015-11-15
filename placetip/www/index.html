@@ -8,14 +8,14 @@
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300" rel="stylesheet" type="text/css">
         <title>Hello World</title>
     </head>
-    <body>
+    <body ng-controller="mainCtrl">
         
         <div class="header">
         </div>
 
-        <div class="map" id="map-canvas"></div>
-
-        <div class="tip-section" ng-controller="tipSectionCtrl">
+        <div class="map" id="map-section" ng-class="{blur: typeButtonsVisible===true}"></div>
+        
+        <div class="tip-section" ng-class="{active: typeButtonsVisible===true}">
 
             <div class="tip-type-buttons" ng-class="{visible: typeButtonsVisible===true}">
                 <div class="tip-type-button"></div>
@@ -33,7 +33,7 @@
         <script src="js/angular.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="js/map.js"></script>
-        <script src="js/controllers/tipSectionCtrl.js"></script>
+        <script src="js/controllers/mainCtrl.js"></script>
         <script src="js/app.js"></script>
         
     </body>
