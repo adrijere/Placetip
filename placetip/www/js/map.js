@@ -22,13 +22,13 @@ function initialize() {
 }
 */
 
-function initMap() {
+function initMap(latitude, longitude) {
     var map = new google.maps.Map(document.getElementById('map-section'), {
-                                  center: {lat: 50.519506, lng: 1.5930193},
+                                  center: {lat: latitude, lng: longitude},
                                   scrollwheel: false,
                                   zoom: 17,
                                   disableDefaultUI: true
                                   });
 }
 
-google.maps.event.addDomListener(window, 'load', initMap);
+//google.maps.event.addDomListener(window, 'load', initMap);
