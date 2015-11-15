@@ -1,16 +1,15 @@
 function onLoad() {
-//    navigator.splashscreen.hide();
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    navigator.splashscreen.hide();
+    navigator.geolocation.getCurrentPosition(onMapSuccess, onError);
+    getPinInCache();
+    pins.forEach(function(pin) {
+        displayPin(pin.lat, pin.lng);
+    });
 }
 
-var onSuccess = function(position){
+var onMapSuccess = function(position){
   initMap(position.coords.latitude, position.coords.longitude);
 };
-
-function onError(error) {
-    console.log('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-}
 
 var app = angular.module('app', []);
 app.controller('mainCtrl', mainCtrl);

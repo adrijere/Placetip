@@ -1,28 +1,9 @@
-/*
-function initialize() {
-    var mapCanvas = document.getElementById('map-section');
-    var myLatLng = {lat: 50.519506, lng: 1.5930193}; // POSITION HHD TOUQUET
-    var mapOptions = {
-        center: myLatLng,
-        zoom: 17,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControl: false,
-    }
-    var centerControlDiv = document.createElement('div');
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    
-    var marker = new google.maps.Marker({
-                                        position: {lat: 50.518706, lng: 1.5930193},
-                                        map: map,
-                                        title: 'Position'
-                                        });
-    
-    centerControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-}
-*/
+var map = none;
+var pins = [];
 
-var map;
+function mapIsDefined() {
+    
+}
 
 function initMap(latitude, longitude) {
     map = new google.maps.Map(document.getElementById('map-section'), {
@@ -33,4 +14,38 @@ function initMap(latitude, longitude) {
                                   });
 }
 
-//google.maps.event.addDomListener(window, 'load', initMap);
+function displayPin(latitude, longitude) {
+    alert("DisplayPin : " + latitude + '/' + longitude);
+    alert(map);
+    var marker = new google.maps.Marker({
+                                        position: {lat: latitude, lng: longitude},
+                                        map: map,
+                                        title: 'Position'
+                                        });
+}
+
+function onTipSuccess(position) {
+    displayPin(position.coords.latitude, position.coords.longitude);
+    savePinInCache(0, position.coords.latitude, position.coords.longitude);
+};
+
+function onError(error) {
+    console.log('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+};
+
+function savePinInCache(type, lat, lng) {
+    var pin = { type: type, lat: lat, lng: lng};
+    var pin_json = JSON.stringify(pin);
+    var name = "pin" + $scope.pins.length;
+    pins.push(pin);
+    localStorage.setItem(name, pin_json);
+}
+
+function getPinInCache() {
+    for (var i = 0; i < localStorage.length; i++) {
+        var pin_json = localStorage.getItem(localStorage.key(i));
+        var pin = JSON.parse(pin_json);
+        pins.push(pin);
+    }
+}
