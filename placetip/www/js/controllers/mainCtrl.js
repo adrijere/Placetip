@@ -6,7 +6,6 @@ function mainCtrl($scope) {
     
     $scope.addPin = function(type) {
         tiptype = type;
-        alert(type);
         navigator.geolocation.getCurrentPosition(onTipSuccess, onError);
         $scope.typeButtonsVisible = false;
     }

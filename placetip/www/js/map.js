@@ -2,6 +2,22 @@ var map;
 var pins = [];
 var tiptype;
 
+function savePinInCache(type, lat, lng) {
+    var pin = { type: type, lat: lat, lng: lng};
+    var pin_json = JSON.stringify(pin);
+    var name = "pin" + pins.length;
+    pins.push(pin);
+    localStorage.setItem(name, pin_json);
+}
+
+function getPinInCache() {
+    for (var i = 0; i < localStorage.length; i++) {
+        var pin_json = localStorage.getItem(localStorage.key(i));
+        var pin = JSON.parse(pin_json);
+        pins.push(pin);
+    }
+}
+
 function initMap(latitude, longitude) {
     map = new google.maps.Map(document.getElementById('map-section'), {
                                   center: {lat: latitude, lng: longitude},
@@ -9,6 +25,18 @@ function initMap(latitude, longitude) {
                                   zoom: 17,
                                   disableDefaultUI: true
                                   });
+    var marker = new google.maps.Marker({
+                                        position: {lat: latitude, lng: longitude},
+                                        map: map,
+                                        title: 'Position'
+                                        });
+    if (localStorage.length < 10) {
+        savePinInCache(1, latitude + 0.0005, longitude + 0.0003);
+        savePinInCache(2, latitude + 0.0007, longitude - 0.0003);
+        savePinInCache(3, latitude - 0.0004, longitude - 0.0006);
+        savePinInCache(4, latitude + 0.0002, longitude + 0.0008);
+        savePinInCache(5, latitude - 0.0008, longitude - 0.0004);
+    }
 }
 
 function displayPin(type, latitude, longitude) {
@@ -45,19 +73,3 @@ function onError(error) {
     console.log('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
 };
-
-function savePinInCache(type, lat, lng) {
-    var pin = { type: type, lat: lat, lng: lng};
-    var pin_json = JSON.stringify(pin);
-    var name = "pin" + $scope.pins.length;
-    pins.push(pin);
-    localStorage.setItem(name, pin_json);
-}
-
-function getPinInCache() {
-    for (var i = 0; i < localStorage.length; i++) {
-        var pin_json = localStorage.getItem(localStorage.key(i));
-        var pin = JSON.parse(pin_json);
-        pins.push(pin);
-    }
-}

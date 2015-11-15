@@ -43,7 +43,7 @@ body {
 
 .tip-button {
     pointer-events:auto;
-    background-color:red;
+    background-color:lightskyblue;
     position:absolute;
     bottom:10%; left:40%;
     width:20%;
