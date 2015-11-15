@@ -22,8 +22,10 @@ function initialize() {
 }
 */
 
+var map;
+
 function initMap(latitude, longitude) {
-    var map = new google.maps.Map(document.getElementById('map-section'), {
+    map = new google.maps.Map(document.getElementById('map-section'), {
                                   center: {lat: latitude, lng: longitude},
                                   scrollwheel: false,
                                   zoom: 17,
