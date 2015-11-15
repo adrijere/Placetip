@@ -80,3 +80,9 @@ body {
 .button-two {
     margin-left: 20px;
 }
+
+.tip-type-button img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
