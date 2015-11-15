@@ -4,4 +4,7 @@ function mainCtrl($scope) {
     $scope.showTypeButtons = function() {
         $scope.typeButtonsVisible = !($scope.typeButtonsVisible);
     }
+    
+    $scope.addPin = function() {
+    }
 }
