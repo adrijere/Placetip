@@ -34,17 +34,18 @@
 }
 
 .tip-type-buttons {
+    pointer-events:none;
     position:absolute;
-    top:50%; left:0; right:0;
+    top:70%; left:0; right:0;
     height:20%;
     opacity:0;
-    margin-top:40%;
+    transition-duration:0.5s;
 }
 
 .tip-type-buttons.visible {
+    pointer-events:auto;
     opacity:1;
-    margin-top:0;
-    transition-duration:0.7s;
+    top:50%;
 }
 
 .tip-type-button {
