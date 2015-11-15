@@ -1,14 +1,14 @@
 function onLoad() {
     navigator.splashscreen.hide();
     navigator.geolocation.getCurrentPosition(onMapSuccess, onError);
-    getPinInCache();
-    pins.forEach(function(pin) {
-        displayPin(pin.lat, pin.lng);
-    });
 }
 
 var onMapSuccess = function(position){
-  initMap(position.coords.latitude, position.coords.longitude);
+    initMap(position.coords.latitude, position.coords.longitude);
+    getPinInCache();
+    pins.forEach(function(pin) {
+                 displayPin(pin.lat, pin.lng);
+                 });
 };
 
 var app = angular.module('app', []);

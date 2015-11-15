@@ -1,9 +1,6 @@
-var map = none;
+var map;
 var pins = [];
-
-function mapIsDefined() {
-    
-}
+var tiptype;
 
 function initMap(latitude, longitude) {
     map = new google.maps.Map(document.getElementById('map-section'), {
@@ -15,8 +12,6 @@ function initMap(latitude, longitude) {
 }
 
 function displayPin(latitude, longitude) {
-    alert("DisplayPin : " + latitude + '/' + longitude);
-    alert(map);
     var marker = new google.maps.Marker({
                                         position: {lat: latitude, lng: longitude},
                                         map: map,
