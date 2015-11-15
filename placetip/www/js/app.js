@@ -1,5 +1,5 @@
 function onLoad() {
-    navigator.splashscreen.hide();
+//    navigator.splashscreen.hide();
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
