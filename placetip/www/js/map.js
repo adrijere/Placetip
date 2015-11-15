@@ -12,14 +12,14 @@ function initMap(latitude, longitude) {
 }
 
 function displayPin(type, latitude, longitude) {
-    /*
     var image = {
-        url: 'www/res/drink_icon.png',
+        url: 'res/drink_icon.png',
         size: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(15, 15)
     };
-    
+
+    /*
     var shape = {
         coords: [1, 1, 1, 20, 18, 20, 18, 1],
         type: 'poly'
@@ -29,7 +29,7 @@ function displayPin(type, latitude, longitude) {
     var marker = new google.maps.Marker({
                                         position: {lat: latitude, lng: longitude},
                                         map: map,
-                                        icon: 'res/drink_icon.png',
+                                        icon: image,
                                         title: 'Position'
                                         });
 }
@@ -48,7 +48,7 @@ function onError(error) {
 function savePinInCache(type, lat, lng) {
     var pin = { type: type, lat: lat, lng: lng};
     var pin_json = JSON.stringify(pin);
-    var name = "pin" + $scope.pins.length;
+    var name = "pin" + pins.length;
     pins.push(pin);
     localStorage.setItem(name, pin_json);
 }
