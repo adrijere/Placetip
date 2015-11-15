@@ -11,17 +11,33 @@ function initMap(latitude, longitude) {
                                   });
 }
 
-function displayPin(latitude, longitude) {
+function displayPin(type, latitude, longitude) {
+    /*
+    var image = {
+        url: 'www/res/drink_icon.png',
+        size: new google.maps.Size(30, 30),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(15, 15)
+    };
+    
+    var shape = {
+        coords: [1, 1, 1, 20, 18, 20, 18, 1],
+        type: 'poly'
+    };
+     */
+    
     var marker = new google.maps.Marker({
                                         position: {lat: latitude, lng: longitude},
                                         map: map,
+                                        icon: 'res/drink_icon.png',
                                         title: 'Position'
                                         });
 }
 
 function onTipSuccess(position) {
-    displayPin(position.coords.latitude, position.coords.longitude);
-    savePinInCache(0, position.coords.latitude, position.coords.longitude);
+    var type = tiptype;
+    displayPin(type, position.coords.latitude, position.coords.longitude);
+    savePinInCache(type, position.coords.latitude, position.coords.longitude);
 };
 
 function onError(error) {

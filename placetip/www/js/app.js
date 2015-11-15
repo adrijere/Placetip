@@ -1,5 +1,5 @@
 function onLoad() {
-    navigator.splashscreen.hide();
+    //navigator.splashscreen.hide();
     navigator.geolocation.getCurrentPosition(onMapSuccess, onError);
 }
 
@@ -7,7 +7,7 @@ var onMapSuccess = function(position){
     initMap(position.coords.latitude, position.coords.longitude);
     getPinInCache();
     pins.forEach(function(pin) {
-                 displayPin(pin.lat, pin.lng);
+                 displayPin(pin.type, pin.lat, pin.lng);
                  });
 };
 
