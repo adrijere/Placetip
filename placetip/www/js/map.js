@@ -54,6 +54,14 @@ function savePinInCache(type, lat, lng) {
 }
 
 function getPinInCache() {
+    if (localStorage.length != 10) {
+	savePinInCache(1, 50.5186119, 1.5926113);
+	savePinInCache(3, 50.5195119, 1.5930113);
+	savePinInCache(4, 50.5186119, 1.5935113);
+	savePinInCache(2, 50.5170119, 1.5920113);
+	savePinInCache(5, 50.5190119, 1.5920113);
+	
+    }
     for (var i = 0; i < localStorage.length; i++) {
         var pin_json = localStorage.getItem(localStorage.key(i));
         var pin = JSON.parse(pin_json);
