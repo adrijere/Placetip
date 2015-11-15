@@ -10,21 +10,22 @@
     </head>
     <body>
         
-        <div class="header"></div>
+        <div class="header">
+        </div>
 
         <div class="map"></div>
 
-        <div class="add-tip-section" ng-controller="tipSectionCtrl">
+        <div class="tip-section" ng-controller="tipSectionCtrl">
 
-            <div class="add-tip-type-buttons-row" ng-hide="typeButtonsHide">
-                <div class="add-tip-type-button"></div>
-                <div class="add-tip-type-button button-two"></div>
-                <div class="add-tip-type-button button-two"></div>
-                <div class="add-tip-type-button button-two"></div>
-                <div class="add-tip-type-button button-two"></div>
+            <div class="tip-type-buttons" ng-class="{visible: typeButtonsVisible===true}">
+                <div class="tip-type-button"></div>
+                <div class="tip-type-button button-two"></div>
+                <div class="tip-type-button button-two"></div>
+                <div class="tip-type-button button-two"></div>
+                <div class="tip-type-button button-two"></div>
             </div>
 
-            <div class="add-tip-button" ng-click="toggle()"></div>
+            <div class="tip-button" ng-click="showTypeButtons()"></div>
 
         </div>
 

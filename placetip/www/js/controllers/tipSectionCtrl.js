@@ -1,3 +1,7 @@
 function tipSectionCtrl($scope) {
-    $scope.typeButtonsHide = true;
+    $scope.typeButtonsVisible = false;
+    
+    $scope.showTypeButtons = function() {
+        $scope.typeButtonsVisible = true;
+    }
 }

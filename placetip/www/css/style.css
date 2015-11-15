@@ -16,13 +16,13 @@
     background-color:white;
 }
 
-.add-tip-section {
+.tip-section {
     z-index:1;
     position:absolute;
     top:0;bottom:0; left:0; right:0;
 }
 
-.add-tip-button {
+.tip-button {
     background-color:red;
     position:absolute;
     bottom:10%; left:40%;
@@ -33,14 +33,21 @@
     border-radius:50%;
 }
 
-.add-tip-type-buttons-row {
-    background-color:purple;
+.tip-type-buttons {
     position:absolute;
-    top:40%; left:0; right:0;
+    top:50%; left:0; right:0;
     height:20%;
+    opacity:0;
+    margin-top:40%;
 }
 
-.add-tip-type-button {
+.tip-type-buttons.visible {
+    opacity:1;
+    margin-top:0;
+    transition-duration:0.7s;
+}
+
+.tip-type-button {
     background-color:grey;
     margin:0px 5%;
     width:10%;
